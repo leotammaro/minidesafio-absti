@@ -1,13 +1,14 @@
 
 import { Route, Routes } from 'react-router-dom';
-import './App.css';
+import './App.scss';
 import Form from './components/Form';
+import Navbar from './components/Navbar';
 import Users from './components/Users';
 
 function App() {
   return (
     <div className="App">
-      <h2>Mini desafio React ABS-TI</h2>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Users />} />
         <Route path="form" element={<Form />} />
