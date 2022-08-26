@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useFilters, useGlobalFilter, useSortBy, useTable } from "react-table";
 import users from "../constants/users";
 import "./Users.scss";
 import direction from "../assets/direction.svg";
 import directionNeutral from "../assets/direction-neutral.svg";
 import search from "../assets/search.svg";
+import UsersContext from "../context/UsersContext";
 
 function Users() {
-  const data = React.useMemo(() => users, []);
+  const { usersData } = React.useContext(UsersContext);
+
   const columns = React.useMemo(
     () => [
       { Header: "Nombre", accessor: "nombre" },
@@ -17,8 +19,9 @@ function Users() {
     ],
     []
   );
+
   const tableWithUsers = useTable(
-    { columns, data },
+    { columns, data: usersData },
     useFilters,
     useGlobalFilter,
     useSortBy
