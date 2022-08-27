@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useFilters, useGlobalFilter, useSortBy, useTable } from "react-table";
-import users from "../constants/users";
 import "./Users.scss";
 import direction from "../assets/direction.svg";
 import directionNeutral from "../assets/direction-neutral.svg";
