@@ -10,6 +10,7 @@ function NewUser() {
     handleSubmit,
     control,
     formState: { isSubmitSuccessful },
+    reset,
   } = useForm();
   const { usersData, setUsersData } = React.useContext(UsersContext);
 
@@ -17,6 +18,7 @@ function NewUser() {
     const { nombre, edad, carrera, hobbie } = data;
     const newUser = { nombre, edad, carrera, hobbie };
     setUsersData([...usersData, newUser]);
+    reset();
   };
 
   return (
