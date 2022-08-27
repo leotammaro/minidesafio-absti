@@ -2,7 +2,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.scss';
-import Form from './components/Form';
+import NewUser from './components/NewUser';
 import Navbar from './components/Navbar';
 import Users from './components/Users';
 import users from './constants/users';
@@ -17,7 +17,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Users />} />
-          <Route path="form" element={<Form />} />
+          <Route path="form" element={<NewUser />} />
         </Routes>
       </div>
     </UsersContext.Provider>
